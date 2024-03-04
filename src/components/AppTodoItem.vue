@@ -1,6 +1,6 @@
 <template>
   <div>
-    <li class="todo-item todo-item--done">
+    <li class="todo-item" :class="{ 'todo-item--done': todo.complete }">
       <div class="todo-item__status">
         <i class="bi bi-check2"></i>
       </div>

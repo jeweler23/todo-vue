@@ -5,7 +5,7 @@
 
   <main class="app-main">
     <AppTodoList />
-    <AppAddTodo />
+    <AppAddTodo @ />
   </main>
 
   <AppFooter />

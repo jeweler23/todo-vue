@@ -28,12 +28,12 @@ export default defineComponent({
       this.$emit('toggleTodo', this.todo.id)
     },
     removeTodoItem() {
-      this.$emit('removeTodoItem', this.todo.id)
+      this.$emit('removeTodo', this.todo.id)
     }
   },
   emits: {
     toggleTodo: (id: number) => Number.isInteger(id),
-    removeTodoItem: (id: number) => Number.isInteger(id)
+    removeTodo: (id: number) => Number.isInteger(id)
   }
 })
 </script>

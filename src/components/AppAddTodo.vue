@@ -7,7 +7,7 @@
       <div class="text-input text-input--focus">
         <input class="input" v-model="todoText" />
       </div>
-      <button class="button button--filled">Add task</button>
+      <button class="button button--filled" @click="transferTodo">Add task</button>
     </form>
     <button v-else class="add-todo__show-form-button" @click="showForm">
       <i class="bi bi-plus-lg"></i>
@@ -35,8 +35,14 @@ export default defineComponent({
     showForm() {
       this.isFormVisible = !this.isFormVisible
     },
-    transferTodoText() {
-      this.$emit('transferTodoText', {})
+    transferTodo() {
+      this.$emit('transferTodoText', {
+        id: Date.now(),
+        text: this.todoText,
+        complete: false
+      })
+      this.todoText = ''
+      this.isFormVisible = true
     }
   },
   emits: {
